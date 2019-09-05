@@ -1,9 +1,16 @@
 package com.ayudantia.demo.Entidades;
 
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
@@ -23,14 +30,23 @@ public class Torneo {
     @Column(name="pais")
     String pais;
 
+    @ManyToMany(cascade = {CascadeType.ALL})
+    @JoinTable(
+        name = "participantes",
+        joinColumns = { @JoinColumn(name="id_torneo")},
+        inverseJoinColumns = { @JoinColumn(name="id_equipo")}
+    )
+    private Set<Equipo> equipos = new HashSet<>();
+
     public Torneo(){
 
     }
 
-    public Torneo(long id, String nombre, String pais) {
+    public Torneo(long id, String nombre, String pais, Set<Equipo> equipos) {
         this.id = id;
         this.nombre = nombre;
         this.pais = pais;
+        this.equipos = equipos;
     }
 
     public long getId() {
@@ -55,6 +71,14 @@ public class Torneo {
 
     public void setPais(String pais) {
         this.pais = pais;
+    }
+
+    public Set<Equipo> getEquipos() {
+        return this.equipos;
+    }
+
+    public void setEquipos(Set<Equipo> equipos) {
+        this.equipos = equipos;
     }
 
 }
