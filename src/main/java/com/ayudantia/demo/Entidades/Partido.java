@@ -4,6 +4,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
@@ -20,11 +22,13 @@ public class Partido{
     @Column(name="id_torneo")
     long idtorneo;
 
-    @Column(name="id_equipoA")
-    long idequipoA;
+    @ManyToOne
+    @JoinColumn(name = "id_equipoA", nullable = true)
+    private Equipo equipoA;
 
-    @Column(name="id_equipoB")
-    long idequipoB;
+    @ManyToOne
+    @JoinColumn(name = "id_equipoB", nullable = true)
+    private Equipo equipoB;
 
     @Column(name="scoreA")
     long scoreA;
@@ -36,11 +40,11 @@ public class Partido{
 
     }
 
-    public Partido(long id, long idtorneo, long idequipoA, long idequipoB, long scoreA, long scoreB) {
+    public Partido(long id, long idtorneo, Equipo equipoA, Equipo equipoB, long scoreA, long scoreB) {
         this.id = id;
         this.idtorneo = idtorneo;
-        this.idequipoA = idequipoA;
-        this.idequipoB = idequipoB;
+        this.equipoA = equipoA;
+        this.equipoB = equipoB;
         this.scoreA = scoreA;
         this.scoreB = scoreB;
     }
@@ -61,20 +65,20 @@ public class Partido{
         this.idtorneo = idtorneo;
     }
 
-    public long getIdequipoA() {
-        return this.idequipoA;
+    public Equipo getEquipoA() {
+        return this.equipoA;
     }
 
-    public void setIdequipoA(long idequipoA) {
-        this.idequipoA = idequipoA;
+    public void setEquipoA(Equipo equipoA) {
+        this.equipoA = equipoA;
     }
 
-    public long getIdequipoB() {
-        return this.idequipoB;
+    public Equipo getEquipoB() {
+        return this.equipoB;
     }
 
-    public void setIdequipoB(long idequipoB) {
-        this.idequipoB = idequipoB;
+    public void setEquipoB(Equipo equipoB) {
+        this.equipoB = equipoB;
     }
 
     public long getScoreA() {
