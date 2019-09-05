@@ -1,9 +1,12 @@
 package com.ayudantia.demo.Entidades;
 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
@@ -23,14 +26,18 @@ public class Equipo{
     @Column(name="pais")
     String pais;
 
+    @OneToMany(mappedBy = "equipo")
+    private Set<Jugador> jugadores;
+
     public Equipo(){
 
     }
 
-    public Equipo(long id, String nombre, String pais) {
+    public Equipo(long id, String nombre, String pais, Set<Jugador> jugadores) {
         this.id = id;
         this.nombre = nombre;
         this.pais = pais;
+        this.jugadores = jugadores;
     }
 
     public long getId() {
@@ -56,5 +63,13 @@ public class Equipo{
     public void setPais(String pais) {
         this.pais = pais;
     }
-    
+
+    public Set<Jugador> getJugadores() {
+        return this.jugadores;
+    }
+
+    public void setJugadores(Set<Jugador> jugadores) {
+        this.jugadores = jugadores;
+    }
+
 }
