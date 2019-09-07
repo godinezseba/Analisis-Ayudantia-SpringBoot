@@ -8,7 +8,6 @@
 
 <a name="context"></a>
 ## 1. Contexto:
-A lo largo de las ayudantías buscaremos desarrollar una aplicación Móvil que sea capaz de mostrar distintos torneos que se estén jugando, ver los equipos asociados a los torneos y sus distintas partidas. Usaremos Spring-Boot para obtener los datos de la Base de Datos:
 
 ![Imgur](https://i.imgur.com/xccLgx9.png)
 
