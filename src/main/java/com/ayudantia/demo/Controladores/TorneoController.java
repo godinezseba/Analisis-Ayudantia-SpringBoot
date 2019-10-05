@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/v1/torneo")
+@RequestMapping("/v1/torneo") // "localhost:8000/v1/torneo/*"
 public class TorneoController{
     @Autowired
     @Qualifier("serviciotorneo")
@@ -48,7 +48,7 @@ public class TorneoController{
     }
 
     @GetMapping("/getAll")
-    public List<Torneo> getAllTorneo(Pageable pageable){
+    public List<Torneo> getAllTorneo(Pageable pageable){ // de no especificarce, se usa un por defecto
         return servicio.obtenerAll(pageable);
     }
 

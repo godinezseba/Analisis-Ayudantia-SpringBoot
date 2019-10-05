@@ -13,7 +13,7 @@ import org.hibernate.annotations.GenericGenerator;
 public class Torneo {
     @Id
     @GenericGenerator(name="incrementtorneo", strategy="increment")
-    @GeneratedValue(generator="incrementtorneo")
+    @GeneratedValue(generator="incrementtorneo") // se utiliza para evitar errores de id duplicadas
     @Column(name="id_torneo")
     private long id;
 
