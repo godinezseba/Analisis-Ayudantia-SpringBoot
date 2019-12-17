@@ -1,4 +1,4 @@
-package com.ayudantia.demo.Entidades;
+package com.ayudantia.demo.HLTV.Entidades;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

@@ -1,4 +1,4 @@
-package com.ayudantia.demo.Entidades;
+package com.ayudantia.demo.HLTV.Entidades;
 
 import java.util.HashSet;
 import java.util.Set;

@@ -1,7 +1,7 @@
-package com.ayudantia.demo.Servicios;
+package com.ayudantia.demo.HLTV.Servicios;
 
-import com.ayudantia.demo.Entidades.Partido;
-import com.ayudantia.demo.Repositorios.PartidoRepositorio;
+import com.ayudantia.demo.HLTV.Entidades.Partido;
+import com.ayudantia.demo.HLTV.Repositorios.PartidoRepositorio;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;

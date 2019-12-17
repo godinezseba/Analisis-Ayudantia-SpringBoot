@@ -1,9 +1,9 @@
-package com.ayudantia.demo.Repositorios;
+package com.ayudantia.demo.HLTV.Repositorios;
 
 import java.io.Serializable;
 import java.util.List;
 
-import com.ayudantia.demo.Entidades.Jugador;
+import com.ayudantia.demo.HLTV.Entidades.Jugador;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

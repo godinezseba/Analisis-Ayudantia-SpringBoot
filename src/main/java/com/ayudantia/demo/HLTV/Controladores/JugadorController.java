@@ -1,11 +1,11 @@
-package com.ayudantia.demo.Controladores;
+package com.ayudantia.demo.HLTV.Controladores;
 
 import java.util.List;
 
 import javax.validation.Valid;
 
-import com.ayudantia.demo.Entidades.Jugador;
-import com.ayudantia.demo.Servicios.JugadorServicio;
+import com.ayudantia.demo.HLTV.Entidades.Jugador;
+import com.ayudantia.demo.HLTV.Servicios.JugadorServicio;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;

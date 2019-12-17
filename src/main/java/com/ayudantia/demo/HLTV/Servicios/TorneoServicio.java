@@ -1,9 +1,9 @@
-package com.ayudantia.demo.Servicios;
+package com.ayudantia.demo.HLTV.Servicios;
 
 import java.util.List;
 
-import com.ayudantia.demo.Entidades.Torneo;
-import com.ayudantia.demo.Repositorios.TorneoRepositorio;
+import com.ayudantia.demo.HLTV.Entidades.Torneo;
+import com.ayudantia.demo.HLTV.Repositorios.TorneoRepositorio;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
