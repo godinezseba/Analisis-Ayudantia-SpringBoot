@@ -1,4 +1,4 @@
-package com.ayudantia.demo.HLTV.Entidades;
+package com.ayudantia.demo.HLTV.Modelos;
 
 import java.sql.Date;
 

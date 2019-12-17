@@ -2,7 +2,7 @@ package com.ayudantia.demo.HLTV.Servicios;
 
 import java.util.List;
 
-import com.ayudantia.demo.HLTV.Entidades.Equipo;
+import com.ayudantia.demo.HLTV.Modelos.Equipo;
 import com.ayudantia.demo.HLTV.Repositorios.EquipoRepositorio;
 
 import org.springframework.beans.factory.annotation.Autowired;

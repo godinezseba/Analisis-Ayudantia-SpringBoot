@@ -2,7 +2,7 @@ package com.ayudantia.demo.HLTV.Controladores;
 
 import javax.validation.Valid;
 
-import com.ayudantia.demo.HLTV.Entidades.Partido;
+import com.ayudantia.demo.HLTV.Modelos.Partido;
 import com.ayudantia.demo.HLTV.Servicios.PartidoServicio;
 
 import org.springframework.beans.factory.annotation.Autowired;

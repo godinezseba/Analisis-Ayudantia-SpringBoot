@@ -3,7 +3,7 @@ package com.ayudantia.demo.HLTV.Repositorios;
 import java.io.Serializable;
 import java.util.List;
 
-import com.ayudantia.demo.HLTV.Entidades.Torneo;
+import com.ayudantia.demo.HLTV.Modelos.Torneo;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

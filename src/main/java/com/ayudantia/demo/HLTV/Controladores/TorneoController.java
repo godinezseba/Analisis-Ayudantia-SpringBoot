@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.validation.Valid;
 
-import com.ayudantia.demo.HLTV.Entidades.Torneo;
+import com.ayudantia.demo.HLTV.Modelos.Torneo;
 import com.ayudantia.demo.HLTV.Servicios.TorneoServicio;
 
 import org.springframework.beans.factory.annotation.Autowired;
