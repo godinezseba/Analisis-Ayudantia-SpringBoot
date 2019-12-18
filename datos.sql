@@ -10,6 +10,8 @@ insert into public.equipo (nombre, pais) values('Team Solo Mid', 'Estados Unidos
 insert into public.equipo (nombre, pais) values('Astralis', 'Dinamarca');
 insert into public.equipo (nombre, pais) values('Barcelona', 'España');
 insert into public.equipo (nombre, pais) values('Chicago Bulls', 'Estados Unidos');
+-- User
+insert into public.usuario(user_name, password) values('seba', 'holamundo');
 -- PARTE 2 --
 -- participantes
 insert into public.participantes(id_torneo, id_equipo) values (1, 1);
