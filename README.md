@@ -4,24 +4,106 @@
 2. [Ejecución](#comand)
 3. [Consideraciones](#consider)
 4. [Detalles API](#api)
-5. [Contacto](#contact)
+5. [Detalles Implementacion](#implementacion)
+6. [Contacto](#contact)
+7. [Bibliografia](#biblio)
 
 <a name="context"></a>
+
 ## 1. Contexto:
 
 ![Imgur](https://i.imgur.com/xccLgx9.png)
 
 <a name="comand"></a>
+
 ## 2. Ejecución:
 - Compilar: `mvn install`
 - Ejecutar: `mvn spring-boot:run`
 
 <a name="consider"></a>
+
 ## 3. Consideraciones:
 - Se esta ejecutando en el puerto `8000`
 
 <a name="api"></a>
+
 ## 4. Detalles API:
+En este proyecto se definen diversos versos para el control de las distintas tablas:
+
+### Autentificacion:
+#### 1. Recibir token:
+- **Definición:** `POST /autentificar`
+- **Cuerpo:**
+```JSON
+{
+	"username": "seba",
+	"password": "holamundo"
+}
+```
+- **Respuesta:** 
+```JSON
+{
+    "jwt": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzZWJhIiwiZXhwIjoxNTc2NzY4MzIwLCJpYXQiOjE1NzY3MzIzMjB9.amR-byoeVUv65J7J6rsRQl9VH9aGVCRvQMdBbzzZhKQ"
+}
+```
+
+### Equipos:
+#### 1. Obtener todos los equipos:
+- **Definición:** `GET /v1/equipo/getAll`
+- **Header:**
+```
+Authorization: Bearer <jwt>
+```
+- **Respuesta:** 
+```JSON
+[
+    {
+        "id": 1,
+        "nombre": "SK Telecom T1",
+        "pais": "Corea del Sur",
+        "jugadores": [
+            {
+                "id": 1,
+                "equipo": 1,
+                "nombre": "nombre1",
+                "apellido": "apellido1",
+                "apodo": "apodo1",
+                "pais": "Chile",
+                "nacimiento": "1998-01-01"
+            }
+        ]
+    },
+    ...
+}
+```
+#### 2. Obtener un equipo:
+- **Definición:** `GET /v1/equipo/equipo?id=`
+- **Header:**
+```
+Authorization: Bearer <jwt>
+```
+- **Respuesta:** 
+```JSON
+{
+    "id": 2,
+    "nombre": "Tricolor de Paine FC",
+    "pais": "Chile",
+    "jugadores": [
+        {
+            "id": 2,
+            "equipo": 2,
+            "nombre": "nombre2",
+            "apellido": "apellido2",
+            "apodo": "apodo2",
+            "pais": "Chile",
+            "nacimiento": "1998-02-02"
+        }
+    ]
+}
+```
+<a name="implementacion"></a>
+
+## 5. Detalles Implementacion:
 
 ### Requisitos previos:
 - Es necesario tener instalado [Maven](https://maven.apache.org/)
@@ -41,7 +123,19 @@ Dependiendo de las variables definidas en [application.properties](https://githu
 - Controladores: `@RestController`
 
 <a name="contact"></a>
-## 5. Contacto:
+
+## 6. Contacto:
 Por favor cualquier cosa que no se entienda o cualquier **falta de ortografía** haganmelo saber por correo.
 
 Sebastian Godínez, sebastian.godinez@sansano.usm.cl
+
+<a name="biblio"></a>
+## 7. Bibliografia:
+
+### Spring Security
+- [Spring Security](https://spring.io/projects/spring-security)
+- [Tutoriales Spring Security](https://www.baeldung.com/security-spring)
+- [Video: Spring Security Basic Authentication](https://www.youtube.com/watch?v=hHzbrbm0X9g)
+- [Video: Spring Security + JPA](https://www.youtube.com/watch?v=TNt3GHuayXs), [Repositorio](https://github.com/koushikkothagal/spring-security-jpa)
+- [Video: Spring Security + JWT](https://www.youtube.com/watch?v=X80nJ5T7YpE), [Repositorio](https://github.com/koushikkothagal/spring-security-jwt)
+- [Spring Security Oauth2](https://www.baeldung.com/rest-api-spring-oauth2-angular)
