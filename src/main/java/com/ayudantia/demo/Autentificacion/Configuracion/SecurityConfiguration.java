@@ -36,6 +36,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
             .antMatchers("/v1/torneo").hasRole("ADMIN")
             .antMatchers("/v1/equipo").hasRole("USER")
             .antMatchers("/autentificar").permitAll()
+            .antMatchers("/crear").permitAll()
             .antMatchers("/").permitAll()
             .anyRequest().authenticated()
             .and().sessionManagement()

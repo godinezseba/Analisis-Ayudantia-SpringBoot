@@ -2,6 +2,7 @@ package com.ayudantia.demo.Autentificacion.Servicios;
 
 import java.util.Optional;
 
+import com.ayudantia.demo.Autentificacion.Modelos.AuthenticationRequest;
 import com.ayudantia.demo.Autentificacion.Modelos.MyUserDetails;
 import com.ayudantia.demo.Autentificacion.Modelos.User;
 import com.ayudantia.demo.Autentificacion.Repositorios.UserRepositorio;
@@ -25,5 +26,17 @@ public class MyUserDetailsServicio implements UserDetailsService{
         user.orElseThrow(() -> new UsernameNotFoundException("No se encontro a: " + userName));
 
         return user.map(MyUserDetails::new).get();
+    }
+
+    public Boolean crear(AuthenticationRequest request){
+        User usuario = new User();
+        usuario.setUserName(request.getUsername());
+        usuario.setPassword(request.getPassword());
+        try{
+            repositorio.save(usuario);
+            return true;
+        } catch (Exception e){
+            return false;
+        }
     }
 }

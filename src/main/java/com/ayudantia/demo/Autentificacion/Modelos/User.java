@@ -22,10 +22,10 @@ public class User{
     private String password;
 
     @Column(name="active")
-    private boolean active;
+    private boolean active = true;
 
     @Column(name="roles")
-    private String roles;
+    private String roles = "ROLE_USER";
 
     public User(){
         

@@ -43,4 +43,9 @@ public class AuthControlador{
         return ResponseEntity.ok(new AuthenticationResponse(jwt));
     }
 
+    @PostMapping("/crear")
+    public Boolean crearUsuario(@RequestBody AuthenticationRequest request){
+        return userServicio.crear(request);
+    }
+
 }
