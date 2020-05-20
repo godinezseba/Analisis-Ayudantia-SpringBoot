@@ -29,27 +29,27 @@ public class EquipoController{
     @Qualifier("servicioequipo")
     EquipoServicio servicio;
 
-    @GetMapping("/equipo")
+    @GetMapping("/")
     public Equipo obtenerEquipo(@RequestParam(name="id", required=true) long id){
         return servicio.obtenerporId(id);
     }
 
-    @PostMapping("/equipo")
+    @PostMapping("/")
     public boolean agregarEquipo(@RequestBody @Valid Equipo equipo){
         return servicio.crear(equipo);
     }
 
-    @PutMapping("/equipo")
+    @PutMapping("/")
     public boolean actualizarEquipo(@RequestBody @Valid Equipo equipo){
         return servicio.actualizar(equipo);
     }
 
-    @DeleteMapping("/equipo/{id}")
+    @DeleteMapping("/{id}")
     public boolean borrarEquipo(@PathVariable("id") long id){
         return servicio.borrar(id);
     }
 
-    @GetMapping("/getAll")
+    @GetMapping("/equipos")
     public List<Equipo> getAllEquipo(){
         return servicio.obtenerAll();
     }

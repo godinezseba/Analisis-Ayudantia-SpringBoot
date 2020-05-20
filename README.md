@@ -30,30 +30,9 @@
 ## 4. Detalles API:
 En este proyecto se definen diversos versos para el control de las distintas tablas:
 
-### Autentificacion:
-#### 1. Recibir token:
-- **Definición:** `POST /autentificar`
-- **Cuerpo:**
-```JSON
-{
-	"username": "seba",
-	"password": "holamundo"
-}
-```
-- **Respuesta:** 
-```JSON
-{
-    "jwt": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzZWJhIiwiZXhwIjoxNTc2NzY4MzIwLCJpYXQiOjE1NzY3MzIzMjB9.amR-byoeVUv65J7J6rsRQl9VH9aGVCRvQMdBbzzZhKQ"
-}
-```
-
 ### Equipos:
 #### 1. Obtener todos los equipos:
-- **Definición:** `GET /v1/equipo/getAll`
-- **Header:**
-```
-Authorization: Bearer <jwt>
-```
+- **Definición:** `GET /v1/equipo/equipos`
 - **Respuesta:** 
 ```JSON
 [
@@ -77,11 +56,7 @@ Authorization: Bearer <jwt>
 }
 ```
 #### 2. Obtener un equipo:
-- **Definición:** `GET /v1/equipo/equipo?id=`
-- **Header:**
-```
-Authorization: Bearer <jwt>
-```
+- **Definición:** `GET /v1/equipo/?id=`
 - **Respuesta:** 
 ```JSON
 {
