@@ -56,12 +56,3 @@ create table public.jugador(
     primary key (id_jugador),
     foreign key (id_equipo) references equipo(id_equipo)
 );
-
-create table public.usuario(
-    id serial not null,
-    user_name varchar(100) not null,
-    password varchar(100) not null,
-    roles varchar(100) default 'ROLE_USER',
-    active boolean default FALSE,
-    primary key (id)
-);
